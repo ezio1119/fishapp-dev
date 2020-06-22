@@ -1,0 +1,18 @@
+[submodule "fishapp-post"]
+	path = fishapp-post
+	url = https://github.com/ezio1119/fishapp-post.git
+[submodule "fishapp-chat"]
+	path = fishapp-chat
+	url = https://github.com/ezio1119/fishapp-chat.git
+[submodule "fishapp-user"]
+	path = fishapp-user
+	url = https://github.com/ezio1119/fishapp-user.git
+[submodule "fishapp-relaylog"]
+	path = fishapp-relaylog
+	url = https://github.com/ezio1119/fishapp-relaylog.git
+[submodule "fishapp-image"]
+	path = fishapp-image
+	url = https://github.com/ezio1119/fishapp-image.git
+[submodule "fishapp-api-gateway"]
+	path = fishapp-api-gateway
+	url = https://github.com/ezio1119/fishapp-api-gateway.git
