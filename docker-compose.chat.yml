@@ -1,0 +1,32 @@
+version: '3.4'
+services:
+  chat:
+    build:
+      context: fishapp-chat
+      target: prod
+    depends_on:
+      - chat-kvs
+      - chat-db
+    tty: true
+    environment:
+      TZ: Asia/Tokyo
+  chat-db:
+    image: mysql:8.0
+    volumes:
+      - chat-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_ja_0900_as_cs --log-bin=chatdb.bin  --binlog-format=ROW
+    tty: true
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: chat_DB
+      TZ: Asia/Tokyo
+  chat-kvs:
+    image: redis:5.0-alpine
+    tty: true
+    command: ["--requirepass", "password"]
+volumes:
+  chat-data:
+networks:
+  default:
+    external:
+      name: fishapp-net
